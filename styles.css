@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=UnifrakturMaguntia&display=swap');
+
+:root {
+  --terra: #b25d34;
+  --terra-escura: #5b2e1f;
+  --pergaminho: #f4ecd8;
+  --grafite: #1b1b1b;
+  --dourado: #c9a227;
+  --texto: #2a2a2a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Crimson Text", serif;
+  color: var(--texto);
+  background: radial-gradient(1200px 600px at 20% 0%, #fff 0, #f7f0e0 30%, #efe6cf 60%, #e8ddb9 100%);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+  color: #fff;
+}
+
+.nav-link {
+  color: var(--dourado) !important;
+  font-weight: 700;
+}
+.nav-link:hover { text-decoration: underline; }
+
+.hero {
+  background: url('img/banner.png') center/cover no-repeat,
+              radial-gradient(80% 60% at 20% 20%, #2a2a2a, #000);
+  border-radius: 28px;
+  min-height: 58vh;
+  display: grid;
+  align-items: end;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 15% 15%, transparent 0 60%, rgba(0,0,0,.6) 100%);
+}
+
+.hero h1, .hero p, .hero a { position: relative; z-index: 1; }
+
+.badge-era {
+  display:inline-block;
+  background: rgba(201,162,39,.15);
+  border: 1px solid rgba(201,162,39,.45);
+  color: var(--dourado);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-family: "UnifrakturMaguntia", serif;
+  letter-spacing: .02em;
+  color: var(--terra);
+  text-shadow: 0 1px 0 #371e13;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.card-medieval {
+  background: var(--pergaminho);
+  border: 1px solid #dbcaa3;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+
+.list-ornada li { margin-bottom: .6rem; }
+
+.figure {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+.figure img { width: 100%; display:block; }
+
+footer {
+  background: #111;
+  color: #ddd;
+  padding: 2rem 0;
+}
+
+.btn-medieval {
+  background: var(--terra);
+  color: #fff;
+  border: none;
+  padding: .9rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.btn-medieval:hover { filter: brightness(1.1); }
+
+/* Acessibilidade (alto contraste) */
+.alto-contraste {
+  background: #000 !important;
+  color: #fff !important;
+}
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .card-medieval { background:#000 !important; color:#fff !important; }
+.alto-contraste .nav-link { color: #ffd700 !important; }
+.alto-contraste .btn-medieval { background: #ffd700; color:#000; }
+
+/* Menu acessibilidade fixo */
+.menu-acessibilidade{
+  position: fixed;
+  top:1rem;
+  right:1rem;
+  z-index: 1000;
+}
+.rotacao-botao{ transform: rotate(-90deg); transform-origin: right center; }
+.opcoes-acessibilidade{ margin-top:.5rem; display:flex; flex-direction:column; }
+.opcoes-acessibilidade button{ margin-bottom:.4rem; }
+.apresenta-lista{ display:none; }
+
+/* Pequenas melhorias responsivas */
+@media (max-width: 768px){
+  .hero{ min-height: 48vh; }
+}
